@@ -16,6 +16,7 @@
 
 #include "dork.h"
 #include "game.h"
+
 void display_init()
 {
 	initscr();			/* Start curses */
