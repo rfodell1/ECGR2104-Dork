@@ -14,9 +14,8 @@ void gameBanner(Player data)
 void newGame()
 {
 	printw("Type 'NEW' to start a new game.\nType 'LOAD' to load a game.\n");
-	string n;
-	getstr(n);	
-	while(n != "NEW")
+	scanw("",name.c_str());	
+	while()
 	{	
 			printw("Command not recognized. Please enter 'NEW' or 'LOAD'.\n");
 			getstr(n);
