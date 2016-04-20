@@ -21,10 +21,12 @@ class Player
         void setLevel(string in_level);
         void setEnergy(int in_energy);
         void setSteps(int in_steps);
-        void setLoc(vector<int> in_loc);
-	
+        void setLoc(vector<int> in_loc);	
 
 };
 
+void gameBanner(Player data);
+void newGame();
 
 #endif
+
