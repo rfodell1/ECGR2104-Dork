@@ -2,7 +2,6 @@
 #include "dork.h"
 #include "game.h"
 
-void gameBanner(Player data);
 
 Player::Player(): name(" "), level("Terrestrial"), energy(0), steps(0), location(0,0)
 {
@@ -59,8 +58,3 @@ void Player::setLoc(vector<int> in_loc)
 	location = in_loc;
 }
 
-void gameBanner(Player data)
-{
-	clearDisplay(1);
-	printw("Hello");    
-}
