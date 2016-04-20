@@ -20,12 +20,15 @@
 int main(int argc, char *argv[])
 {
 	display_init();
-	intro_display();
+	//intro_display();
 	/*User function calls
 	 */
-	Player data;
-	gameBanner(data);
-
+	clearDisplay(1);		
+	//Player data;
+	//gameBanner(data);
+	newGame();
+		
+	
 	getch();
 	display_close();
 	return 0;
