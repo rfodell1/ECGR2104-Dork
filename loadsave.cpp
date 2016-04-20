@@ -2,7 +2,30 @@
 
 void load(String fileName){
   //read in data from file name
-  //set each player variable based on file info
+  String fileN = player.getName() + ".dat";
+  ifstream fileName;
+  int count = 1;
+  for(String line; getLine(fileName, line)){
+    if(count = 1){
+      player.setName(getLine(fileName, line));
+      count++;
+    }
+    if(count = 2){
+      player.setLevel(getLine(fileName, line));
+      count++;
+    }
+    if(count = 3){
+      player.setyEnergy(getLine(fileName, line));
+      count ++;
+    }
+    if(count == 4){
+      player.setSteps(getLine(fileName, line));
+      count ++;
+    }
+    if(count = 5){
+      player.setLoc(getLine(fileName, line));
+    }
+  }
 }
 
 void save(){
