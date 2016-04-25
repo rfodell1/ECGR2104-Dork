@@ -5,7 +5,15 @@ void roll(){
   //random # generator between 1&6 to simulate a dice roll
   int dice = rand() % 6 + 1;
   //update player position based on roll
-  player.setLoc() = player.getLoc() + dice;
+  
+  //if theyre in x plane
+  if (p1.getLevel() == "Terestrial" || p1.getLevel() == "Cloud")
+  p1.setXLoc() = p1.getXLoc() + dice;
+  
+  //if theyre in y plane
+  if (p1.getLevel() = "Aboretal")
+  p1.setYLoc() = p1.setYLoc() + dice;
+  
 }
 
 void eventData(){
