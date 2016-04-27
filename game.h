@@ -10,8 +10,8 @@ class Player
         int energy;
         int steps;
         vector<int> location;
-	    int xLoc;
-	    int yLoc;
+	int xLoc;
+	int yLoc;
     public:
         Player();
         string getName();
