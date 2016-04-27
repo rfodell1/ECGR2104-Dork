@@ -19,17 +19,17 @@ class Player
         int getEnergy();
         int getSteps();
         vector<int> getLoc();
-	    int getXLoc();
-	    int getYLoc();
+	int getXLoc();
+	int getYLoc();
         void setName(string in_name);
         void setLevel(string in_level);
         void setEnergy(int in_energy);
         void setSteps(int in_steps);
         void setLoc(vector<int> in_loc);
-	    void setXLoc(int in_xloc);
-	    void setYLoc(int in_yloc);
+	void setXLoc(int in_xloc);
+	void setYLoc(int in_yloc);
     	void newGame();
-	    void setParam();	
+	void setParam();	
 
 };
 
