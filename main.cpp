@@ -17,20 +17,21 @@
 #include "dork.h"
 #include "game.h"
 
+
 int main(int argc, char *argv[])
 {
 	display_init();
 	//intro_display();
 	/*User function calls
 	 */
+	Player p1;	
 	clearDisplay(1);		
-	//Player data;
-	//gameBanner(data);
-	newGame();
+	gameBanner(p1);
+	start(p1);
+	turn(p1);
 		
 	
 	getch();
 	display_close();
 	return 0;
 }
-
