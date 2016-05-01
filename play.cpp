@@ -72,6 +72,8 @@ void evtLoad()
 	
 }
 
+
+
 int roll(){	
 	//random # generator between 1&6 to simulate a dice roll
 	srand(time(NULL));	
@@ -108,6 +110,8 @@ void turn(Player &p1)
 				d1 = roll();
 			}
 		}
+		
+		
 
 		//check if won, lost, or quit
 		p1.setSteps(p1.getSteps() + d1);
@@ -128,6 +132,23 @@ void turn(Player &p1)
 
 	}
 }
+
+void posCheck(player& p1)
+{
+	
+	for(int c = 0; c < 200; c++)
+	{
+		int checkVar = check(pl.getXLoc(), p1.getYLoc(), evt[c].elX, evt[c].elY);	
+		if(checkVar == 1)
+		{
+			//handle(p1.getXLoc(), p1.getYLoc, p1.getEnergy, evt[c].descrip, evt[c].response, evt[c].energy, evt[c].elrX, evt[c].elrY, evt[c].questi);			
+		}
+		
+	}
+		
+}
+
+
 
 int intConvert(string line)
 {
@@ -154,3 +175,4 @@ int intConvert(string line)
 	}
 	return a;
 }
+
