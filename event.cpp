@@ -1,11 +1,11 @@
 //include player information
 //include roll information
 
-int check(int xL, int yL, int eLocX, int eLocY)
+int check(int eLocX, int eLocY, Player &p1)
 {
 	int evtCheck = 0;	
 
-	if(eLocX == xL && eLocY == yL)
+	if(eLocX == p1.getXLoc() && eLocY == p1.getYLoc())
 	{
 		evtCheck = 1;
 	}
