@@ -1,6 +1,76 @@
 #include "dork.h"
 #include "game.h"
 
+//Struct that holds the data from events.txt
+struct event{
+	
+	int elX;
+	int elY;
+	string descrip;
+	int response;
+	int energy;
+	int elrX;
+	int elrY;
+	int questi;
+	
+} evt[200];
+
+void evtLoad()
+{
+	
+	//Loading of data into struct array
+	ifstream fin;	
+	fin.open("events.txt");
+	
+	for(int i = 0; i < 200; i++)
+	{
+		//Strings to hold numeric values that will be converted to integers
+		string respHold;	
+		string engHold;
+		string questHold;
+		string evtlHold;
+		string evtlrHold;
+		
+		//Reading of text file, stores string values
+		getline(fin, evtlHold, '^');
+		getline(fin, evt[i].descrip, '^');
+		getline(fin, respHold, '^');
+		getline(fin, engHold, '^');
+		getline(fin, evtlrHold, '^');
+		getline(fin, questHold, '^');
+
+		//strings to hold coordinate substrings
+		string xHold;
+		string yHold;
+		string xrHold;
+		string yrHold;
+
+		//Conversion of event coordinates to x and y integers
+		int leng = evtlHold.length();
+		int comP = evtlHold.find(',');
+		xHold = evtlHold.substr(1, comP - 1);
+		evt[i].elX = intConvert(xHold);
+		yHold = evtlHold.substr(comP + 1, leng);
+		evt[i].elY = intConvert(yHold);
+
+		//Conversion of response coordinates to x and y integers
+		int lengt = evtlrHold.length();
+		int commaP = evtlrHold.find(',');
+		xrHold = evtlrHold.substr(0, commaP);
+		evt[i].elrX = intConvert(xrHold);
+		yrHold = evtlrHold.substr(commaP + 1, lengt - 1);
+		evt[i].elrY = intConvert(yrHold);
+
+		//Converts read string values to integers where needed
+		evt[i].response = intConvert(respHold);		
+		evt[i].energy = intConvert(engHold);
+		evt[i].questi =	intConvert(questHold);
+
+	}	
+	
+	fin.close();
+	
+}
 
 int roll(){	
 	//random # generator between 1&6 to simulate a dice roll
@@ -59,15 +129,28 @@ void turn(Player &p1)
 	}
 }
 
-/*void eventData(){
+int intConvert(string line)
+{
+	string buffer = line;
+	int a = 0;
+	int needN = 0;
 
-  //check current position
-  int playLoc = p1.getLoc();
-  //check if theres an event at that position
-  for(read event file)
-    //get the location even number
-    if (playLoc = eventNum){
-      //if there is call the event handler function
-    }
+	int negative = buffer.find('-');
+	if(negative >= 0)
+	{
+		int leng = buffer.length();
+		buffer = buffer.substr(negative + 1, leng);
+		needN = 1;
+	}
+	
+	for(string::iterator it = buffer.begin() ; it!= buffer.end() ; ++it)
+	{
+	a = (a*10) + (*it-48);
+	}
+	
+	if(needN == 1)
+	{
+		a = -a;
+	}
+	return a;
 }
-*/
