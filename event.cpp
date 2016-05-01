@@ -1,10 +1,16 @@
 //include player information
 //include roll information
 
-void check(){
+int check(int xL, int yL, int eLocX, int eLocY)
+{
+	int evtCheck = 0;	
 
-  //function to check if there is an event at players current location
+	if(eLocX == xL && eLocY == yL)
+	{
+		evtCheck = 1;
+	}
 
+	return evtCheck;
 }
 
 void handle(){
