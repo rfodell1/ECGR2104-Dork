@@ -1,3 +1,25 @@
+/*********************************************************************
+* File: play.cpp
+* Description:  Event data struct
+* 		load data from file to struct
+* 		Roll function
+* 		Turn function, which calls necessary functions for the user to take each turn
+* 		function to check users position
+* 		int convert function to replace stoi
+* Author: Tate Clark (uncc.edu)
+* Author: Wesley Harrison (wharri41@uncc.edu)
+* Edits: Robert Fodell (rfodell1@uncc.edu)
+* University: UNC Charlotte
+*
+* This program is part of UNC Charlotte course project
+* and is distributed for education purpose only.
+* All commercial rights are reserved by the author on
+* distibution of the game database, custom function , header, ascii art
+* and other related to this game pack.
+* must be properly acknowledge.
+* /
+* *******************************************************************/
+
 #include "dork.h"
 #include "game.h"
 
