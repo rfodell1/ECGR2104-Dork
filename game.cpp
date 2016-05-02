@@ -16,6 +16,7 @@
 * must be properly acknowledge.
 * /
 * *******************************************************************/
+
 #include "dork.h"
 #include "game.h"
 
@@ -115,7 +116,43 @@ void Player::newGame()
 {
 	printw("Enter your name:\n");
 	scanw("%s", name.c_str());
+	while (strlen(name.c_str()) > 15)
+	{
+		printw("Please keep name under 15 characters.\n");
+		printw("Enter your name:\n");
+		scanw("%s", name.c_str());
+	}
+
 	setParam();
 		
 }
+
+void Player::fileProcess(ifstream &fileName)
+{
+	string temp[6];
+	string line;
+	int i = 0;	
+	
+	if(fileName.good())
+	{
+		while(getline(fileName, line)){	
+		cout<<line<<endl;		
+		temp[i] = line;
+		i++;
+			if(i==7){
+				break;
+			}
+		}
+		setName(temp[0]);
+		setLevel(temp[1]);
+		setEnergy(intConvert(temp[2]));
+		setSteps(intConvert(temp[3]));
+		setXLoc(intConvert(temp[4]));
+		setYLoc(intConvert(temp[5]));
+	}
+		
+	fileName.close();
+
+}
+
 
