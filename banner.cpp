@@ -14,6 +14,7 @@
  * must be properly acknowledge.
  * /
  * *******************************************************************/
+
 #include "dork.h"
 #include "game.h"
 
@@ -44,7 +45,6 @@ void updateBanner(Player &p1)
 {
 	//name remains same
 	//if (check == 0) energy - 1
-	p1.setEnergy(p1.getEnergy() - 1);
 	//steps + dice value
 	//check level
 	//if (check == 1) handle();
@@ -90,11 +90,15 @@ void start(Player &p1)
 	if (strcmp(str,"NEW")==0 || strcmp(str,"new")==0 || strcmp(str,"New")==0)
 	{
 		p1.newGame();
+		updateBanner(p1);
 	}
-	else if (strcmp(str,"LOAD")==0 || strcmp(str,"LOAD")==0 || strcmp(str,"LOAD")==0)
+	else if (strcmp(str,"LOAD")==0 || strcmp(str,"load")==0 || strcmp(str,"Load")==0)
 	{
-		//load(p1);
+		load(p1);
+		p1.setParam();
+		updateBanner(p1);
 	}		
 
 		
 }
+
