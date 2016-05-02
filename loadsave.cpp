@@ -1,4 +1,21 @@
-//include player information so that you can access name/ level/ etc.
+/*********************************************************************
+* File: loadsave.cpp
+* Description:  load a user profile from a .dat file
+* 		save a user profile to a .dat file
+* 		get line function
+* 		int convertt function to replace stoi
+* Author: Wesley Harrison (wharri41@uncc.edu)
+* Edits: Robert Fodell (rfodell1@uncc.edu)
+* University: UNC Charlotte
+*
+* This program is part of UNC Charlotte course project
+* and is distributed for education purpose only.
+* All commercial rights are reserved by the author on
+* distibution of the game database, custom function , header, ascii art
+* and other related to this game pack.
+* must be properly acknowledge.
+* /
+* *******************************************************************/
 #include "dork.h"
 #include "game.h"
 
