@@ -1,4 +1,17 @@
-//class declaration
+/*********************************************************************
+* File: game.h
+* Description:  header file for game.cpp
+* Author: Robert Fodell (rfodell1@uncc.edu)
+* University: UNC Charlotte
+*
+* This program is part of UNC Charlotte course project
+* and is distributed for education purpose only.
+* All commercial rights are reserved by the author on
+* distibution of the game database, custom function , header, ascii art
+* and other related to this game pack.
+* must be properly acknowledge.
+* /
+* *******************************************************************/
 #ifndef GAME_H
 #define GAME_H
 
