@@ -16,6 +16,7 @@
 * must be properly acknowledge.
 * /
 * *******************************************************************/
+
 #include "dork.h"
 #include "game.h"
 
@@ -33,24 +34,26 @@ void load(Player &p1){
 		if(!fileName)
 		{
 			cerr << "File does not exist." << endl;
-			exit(0);
+			updateBanner(p1);
+			start(p1);
 		}
 		else
 		{
-			fileName.open(fileN);
-			fileProcess(fileName, p1);
-		}				
+			p1.fileProcess(fileName);
+		}
+			
 		
 	
 }
 
 void save(Player &p1){
   	//write data to players file if it exists
-  	string fileN = p1.getName() + "dat";  	
+	string fileN = (p1.getName()).c_str();
+	fileN = fileN + ".dat";  	
 	ofstream fileName(fileN);
-  	//if (!fileName){
+  	if (!fileName){
     		//file doesn't exist, create
-		fileName.open(fileN,ios::app);
+		fileName.open(fileN);
     		//write to file
     		fileName << (p1.getName()).c_str() << endl;
     		fileName << p1.getLevel() << endl;
@@ -59,34 +62,22 @@ void save(Player &p1){
     		fileName << p1.getXLoc() << endl;
 		fileName << p1.getYLoc() << endl;
     
- // 	}
-  //	else{
+ 	}
+  	else{
     		//file exists, write to
-    //		fileName << (p1.getName()).c_str() << endl;
-    	//	fileName << p1.getLevel() << endl;
-    	//	fileName << p1.getEnergy() << endl;
-    	//	fileName << p1.getSteps() << endl;
-    	//	fileName << p1.getXLoc() << endl;
-	//	fileName << p1.getYLoc() << endl;
-  	//}
-	
-	fileName.close();
-
-}
-
-void fileProcess(ifstream &fileName, Player &p1)
-{
-	string temp[6];
-	int i = 0;
-	
-	for (string line; getline(fileName, line);){
-		temp[i] = line;
-		i++;
-    		
+    		fileName << (p1.getName()).c_str() << endl;
+    		fileName << p1.getLevel() << endl;
+    		fileName << p1.getEnergy() << endl;
+    		fileName << p1.getSteps() << endl;
+    		fileName << p1.getXLoc() << endl;
+		fileName << p1.getYLoc() << endl;
   	}
+	
 	fileName.close();
 
 }
+
+
 
 int intConvert(string &line) //stoi() gave thrown exception errors
 {
