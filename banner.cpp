@@ -1,4 +1,19 @@
-//Display and update functions
+/*********************************************************************
+ * File: banner.cpp
+ * Description: Display the game banner, users name, level, energy, and steps after every turn
+ * 		Start a game sequence, with options for a new game, or load game
+ * Author: Robert Fodell (rfodell1@uncc.edu)
+ * Edits: Wesley Harrison (wharri41@uncc.edu)
+ * University: UNC Charlotte
+ *
+ * This program is part of UNC Charlotte course project
+ * and is distributed for education purpose only.
+ * All commercial rights are reserved by the author on
+ * distibution of the game database, custom function , header, ascii art
+ * and other related to this game pack.
+ * must be properly acknowledge.
+ * /
+ * *******************************************************************/
 #include "dork.h"
 #include "game.h"
 
