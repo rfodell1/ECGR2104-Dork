@@ -30,10 +30,8 @@ void checkpoint(Player &p1){
   	if(check < 6 && check >= 0 && p1.getSteps() > 5)
 	{
     		//call the save function with the players current information as the argument'
-   		//save(p1);
-		printw("Game saved.");
-		char test[1];		
-		scanw("%s", test);
+   		save(p1);
 			
   	}
 }
+
