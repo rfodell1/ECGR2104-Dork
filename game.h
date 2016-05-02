@@ -1,6 +1,6 @@
 /*********************************************************************
 * File: game.h
-* Description:  header file for game.cpp
+* Description:  header file for game.cpp, class declaration
 * Author: Robert Fodell (rfodell1@uncc.edu)
 * University: UNC Charlotte
 *
@@ -12,6 +12,7 @@
 * must be properly acknowledge.
 * /
 * *******************************************************************/
+
 #ifndef GAME_H
 #define GAME_H
 
@@ -41,8 +42,9 @@ class Player
         void setLoc(vector<int> in_loc);
 	void setXLoc(int in_xloc);
 	void setYLoc(int in_yloc);
-    	void newGame();
-	void setParam();	
+	void newGame();
+	void setParam();
+	void fileProcess(ifstream &fileName);	
 
 };
 
@@ -54,13 +56,21 @@ void updateBanner(Player &p1);
 //play.cpp
 void roll(Player &p1);
 void turn(Player &p1);
-void eventData();
+void levelCheck(Player &p1);
+void evtLoad();
+void posCheck(Player &p1);
+int conversion(string line);
 
 //loadsave
-//void load(Player &p1);
-//void save(Player &p1);
+void load(Player &p1);
+void save(Player &p1);
+int intConvert(string &line);
 
 //checkpoint
 void checkpoint(Player &p1);
+
+//event
+int check(int eLocX, int eLocY, Player &p1);
+void handle(string des, int resp, int ener, int x, int y, int ques, Player &p1);
 
 #endif
