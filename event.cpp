@@ -93,19 +93,148 @@ void handle(string des, int resp, int ener, int x, int y, int ques, Player &p1){
 	}
 
 	//Questions that ask to eat or store energy items
-	if(questResp == 1 && engResp != 0 && isQuesti == 0)
+	//Questions that store user input
+	/*if(questResp == 1 && engResp == 0 && isQuesti == 1)
 	{
-		if(playerinput == eat)
+		cin >> userIn
+		if(questionID == 1)
 		{
-		p1.setEnergy = p1.getEnergy + engResp;
+			//stores job
+			p1.job = userIn;
 		}
-		if(playerinput == store)
+		else if(questionID == 2)
 		{
-		p1.pack = engResp;
-		//set pack counter to 5 decrement by 1 each roll (or 0 and increment)
+			//stores music
+			p1.music = userIn;
 		}
-	}
-	*/
+		else if(questionID == 3)
+		{
+			//stores sport
+			p1.sport = userIn
+		}
+		else if(questionID == 4)
+		{	
+			//stores phrase
+			p1.phrase = userIn
+		}
+		else if(questionID == 5)
+		{
+			//stores color
+			p1.color = userIn
+		}
+		else if(questionID == 6)
+		{
+			//compares phrase
+			if(userIn == p1.job)
+			{
+				cout << "Correct" << endl;
+			}
+			else if(userIn != p1.job)
+			{
+				cout << "Incorrect. Try again" << endl;
+				int g = 0;
+				while(g == 0)
+				{
+					cin >> userIn;
+					if(userIn == p1.job)
+					{
+						cout << "Correct" << endl;
+						g = 1;
+					}
+				}
+			}
+			
+		}
+		else if(questionID == 7)
+		{
+			compares color
+			if(userIn == p1.job)
+			{
+				cout << "Correct" << endl;
+			}
+			else if(userIn != p1.job)
+			{
+				cout << "Incorrect. Try again" << endl;
+				int g = 0;
+				while(g == 0)
+				{
+					cin >> userIn;
+					if(userIn == p1.job)
+					{
+						cout << "Correct" << endl;
+						g = 1;
+					}
+				}
+			}
+		}
+		else if(questionID == 8)
+		{
+			compares job
+			if(userIn == p1.job)
+			{
+				cout << "Correct" << endl;
+			}
+			else if(userIn != p1.job)
+			{
+				cout << "Incorrect. Try again" << endl;
+				int g = 0;
+				while(g == 0)
+				{
+					cin >> userIn;
+					if(userIn == p1.job)
+					{
+						cout << "Correct" << endl;
+						g = 1;
+					}
+				}
+			}
+		}
+		else if(questionID == 9)
+		{
+			compares sport
+			if(userIn == p1.job)
+			{
+				cout << "Correct" << endl;
+			}
+			else if(userIn != p1.job)
+			{
+				cout << "Incorrect. Try again" << endl;
+				int g = 0;
+				while(g == 0)
+				{
+					cin >> userIn;
+					if(userIn == p1.job)
+					{
+						cout << "Correct" << endl;
+						g = 1;
+					}
+				}
+			}
+		}
+		else if(questionID == 10)
+		{
+			compares music
+			if(userIn == p1.job)
+			{
+				cout << "Correct" << endl;
+			}
+			else if(userIn != p1.job)
+			{
+				cout << "Incorrect. Try again" << endl;
+				int g = 0;
+				while(g == 0)
+				{
+					cin >> userIn;
+					if(userIn == p1.job)
+					{
+						cout << "Correct" << endl;
+						g = 1;
+					}
+				}
+			}
+		}
+		
+	}*/
 
 
 }
