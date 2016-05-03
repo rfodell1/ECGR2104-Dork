@@ -126,6 +126,7 @@ struct event{
 	int elrX;
 	int elrY;
 	int questi;
+	int questionID;
 	
 } evt[200];
 
@@ -179,6 +180,15 @@ void evtLoad()
 		evt[i].response = intConvert(respHold);		
 		evt[i].energy = intConvert(engHold);
 		evt[i].questi =	intConvert(questHold);
+		
+		//Identifies type of question, if a question at all
+		int id = 0;			
+		if(evt[i].questi == 1)
+		{		
+			string descHold = evt[i].descrip;
+			id = idQuestion(descHold);
+		}
+		evt[i].questionID = id;
 
 	}	
 	
@@ -227,4 +237,91 @@ int conversion(string line)
 		a = -a;
 	}
 	return a;
+}
+
+int idQuestion(string questid)
+{
+	//Identifiers used to ID keywords in questions and subjects
+	int QID = 0;
+	int questWhat = -1;
+	int questwhat = -1;
+	int questlike = -1;
+	int questprovide = -1;
+	int questParadise = -1;
+	int questwants = -1;
+	int questneeds = -1;
+	int questreply = -1;
+	int keyjob = -1;
+	int keymusic = -1;
+	int keysport = -1;
+	int keyphraseQ = -1;
+	int keycolorQ = -1;
+	int keyphrase = -1;
+	int keycolor = -1;
+	int keyjobQ = -1;
+	int keymusicP = -1;
+
+	//Searching the subject for the specified keywords
+	questWhat = questid.find("What");
+	questwhat = questid.find("what");
+	questlike = questid.find("like");
+	questprovide = questid.find("provide");
+	questParadise = questid.find("Paradise");
+	questwants = questid.find("wants");
+	questneeds = questid.find("needs");
+	questreply = questid.find("reply");
+	keyjob = questid.find("job");
+	keymusic = questid.find("music");
+	keysport = questid.find("sport");
+	keyphraseQ = questid.find("phrase?");
+	keycolorQ = questid.find("color?");
+	keyphrase = questid.find("phrase");
+	keycolor = questid.find("color");
+	keyjobQ = questid.find("job?");
+	keymusicP = questid.find("music.");
+
+	//Assigning the correct questions to ID numbers
+	if(questWhat >= 0 && keyjob >= 0)
+	{
+			QID = 1;
+	}
+	if(questwhat >= 0 && keymusic >= 0)
+	{
+			QID = 2;
+	}
+	if(questlike >= 0 && keysport >= 0)
+	{
+			QID = 3;
+	}
+	if(questprovide >= 0 && keyphraseQ >= 0)
+	{
+			QID = 4;
+	}
+	if(questWhat >= 0 && keycolorQ >= 0)
+	{
+			QID = 5;
+	}
+	if(questParadise >= 0 && keyphrase >= 0)
+	{
+			QID = 6;
+	}
+	if(questwants >= 0 && keycolor >= 0)
+	{
+			QID = 7;
+	}
+	if(questwants >= 0 && keyjobQ >= 0)
+	{
+			QID = 8;
+	}
+	if(questneeds >= 0 && keysport >= 0)
+	{
+			QID = 9;
+	}
+	if(questreply >= 0 && keymusicP >= 0)
+	{
+			QID = 10;
+	}
+	
+	return QID;
+
 }
