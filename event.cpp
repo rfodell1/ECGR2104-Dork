@@ -71,6 +71,42 @@ void handle(string des, int resp, int ener, int x, int y, int ques, Player &p1){
 			p1.setEnergy(p1.getEnergy() + ener);
 		}
 	}*/
+	
+	///////////////////////Tate's event logic
+	/*
+	//Level change questions
+	if(questResp == 1 && engResp == 0 && isQuesti == 0)
+	{
+		if(playerinput == yes)
+		{
+			p1.setXLoc = p1.getXLoc + xResp);
+		}
+		
+	}
+	
+	//Questions that store user input
+	if(questResp == 1 && engResp == 0 && isQuesti == 1)
+	{
+		userIn = playerinput
+		//write player input to save file
+		//needs a way to distinguish questions that ask for user input and questions that ask for saved response
+	}
+
+	//Questions that ask to eat or store energy items
+	if(questResp == 1 && engResp != 0 && isQuesti == 0)
+	{
+		if(playerinput == eat)
+		{
+		p1.setEnergy = p1.getEnergy + engResp;
+		}
+		if(playerinput == store)
+		{
+		p1.pack = engResp;
+		//set pack counter to 5 decrement by 1 each roll (or 0 and increment)
+		}
+	}
+	*/
+
 
 }
 
